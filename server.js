@@ -1,12 +1,19 @@
-const express = require('express');
-const cors = require('cors');
+import express from 'express';
+import cors from 'cors';
+import mongoose from 'mongoose';
 
-const app = express();
-const PORT = process.env.PORT || 3001;
+const server = express();
+server.use(express.json());
+server.use(cors());
+const port = 3000;
+const mongoDB =
+  'mongodb+srv://My_virtual_planning-1:My_virtual_planning_1@cluster0.rxijp.mongodb.net/dbMyVip?retryWrites=true&w=majority';
 
-app.use(cors());
-app.use(express.json());
+mongoose
+  .connect(mongoDB, { useNewUrlParser: true, useUnifiedTopology: true })
+  .then(() => console.log('Connexion à MongoDB réussie !'))
+  .catch(() => console.log('Connexion à MongoDB échouée !'));
 
-app.listen(PORT, () => console.log(`Server is listen on ${PORT}`));
-
-// Bon boulot Emmy 🤣!
+server.listen(port, () => {
+  console.log(`Example app listening at http://localhost:${port}`);
+});

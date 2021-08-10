@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "description": "backend side of my virtual planning service",
   "main": "server.js",
+  "type": "module",
   "scripts": {
+    "start": "nodemon",
     "eslint": "eslint . --fix",
     "test": "npm run eslint",
     "dev": "npm run test && nodemon server.js",
