@@ -6,7 +6,7 @@ import postUser, { getUsers } from '../controller/userController.js';
 const userRoutes = (server) => {
   const BASE_URI = '/api/users';
   // eslint-disable-next-line prettier/prettier
-  server.post(`${BASE_URI}/post`,postUser);
-  server.use(`${BASE_URI}/get`, getUsers);
+  server.post(`${BASE_URI}/`,postUser);
+  server.use(`${BASE_URI}/`, getUsers);
 };
 export default userRoutes;
