@@ -9,4 +9,10 @@ import userRoutes from './src/routes/userRoutes.js';
 const server = express();
 server.use(bodyParser.json());
 server.use(cors());
-userRoutes(server);
+const port = process.env.PORT || 8083;
+const BASE_URI = '/api/users';
+server.use(BASE_URI, userRoutes);
+
+server.listen(port, () => {
+  console.log(`Example app listening at http://localhost:${port}`);
+});
