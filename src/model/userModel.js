@@ -20,11 +20,9 @@ const userSchema = new mongoose.Schema({
   user_type: {
     type: { id: { type: Number }, name: { type: String } },
   },
-  status_user: { type: Boolean },
-  account_session: { type: Boolean },
+  status_user: { type: String },
+  account_session: { type: String },
   c_date: { type: Date },
 });
 
-const UserModel = mongoose.model('Thing', userSchema);
-
-export default UserModel;
+export default mongoose.model('User', userSchema);
