@@ -20,8 +20,8 @@ const userSchema = new mongoose.Schema({
   user_type: {
     type: { id: { type: Number }, name: { type: String } },
   },
-  status_user: { type: String },
-  account_session: { type: String },
+  status_user: { type: Boolean },
+  account_session: { type: Boolean },
   c_date: { type: Date },
 });
 

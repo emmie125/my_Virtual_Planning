@@ -8,6 +8,7 @@ const postUser = async (req, res) => {
     });
     await user.save();
     res.status(200).json({ message: 'Utilisateur enregistré avec succès !' });
+    res.status(400).json({ message: 'Utilisateur enregistré avec error !' });
   } catch (error) {
     res.status(500).json(error.message);
   }
