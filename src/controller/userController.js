@@ -1,3 +1,4 @@
+// import bcrypt from 'bcrypt';
 // eslint-disable-next-line import/extensions
 import UserModel from '../model/userModel.js';
 
